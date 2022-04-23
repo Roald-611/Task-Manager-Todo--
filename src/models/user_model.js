@@ -1,9 +1,8 @@
 const bcrypt = require('bcryptjs/dist/bcrypt');
-// const async = require('hbs/lib/async');
 const mongoose = require('mongoose');
 const validator = require('validator');
 const jwt = require('jsonwebtoken');
-const Tasks = require('./task')
+const Tasks = require('./task_model')
 
 const userSchema = new mongoose.Schema({
     name: {
