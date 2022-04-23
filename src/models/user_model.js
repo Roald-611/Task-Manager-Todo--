@@ -1,10 +1,10 @@
 const bcrypt = require('bcryptjs/dist/bcrypt');
-const mongoose = require('mongoose');
+const mongodb = require('mongodb');
 const validator = require('validator');
 const jwt = require('jsonwebtoken');
 const Tasks = require('./task_model')
 
-const userSchema = new mongoose.Schema({
+const userSchema = new mongodb.Schema({
     name: {
         type: String,
         required: true,
@@ -117,7 +117,7 @@ userSchema.pre('remove', async function (next) {
     next()
 })
 
-const User = mongoose.model('User', userSchema)
+const User = mongodb.model('User', userSchema)
 
 
 module.exports = User;

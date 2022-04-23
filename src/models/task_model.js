@@ -1,11 +1,6 @@
-const mongoose = require('mongoose');
+const mongodb = require('mongodb');
 
-mongoose.connect('mongodb://127.0.0.1:27017/taskManager-api', {
-    useNewUrlParser: true,
-    // useCreateIndex: true
-});
-
-const taskSchema = new mongoose.Schema({
+const taskSchema = new mongodb.Schema({
     description: {
         type: String,
         require: true,
@@ -24,5 +19,5 @@ const taskSchema = new mongoose.Schema({
 });
 
 
-const Tasks = mongoose.model('Tasks', taskSchema)
+const Tasks = mongodb.model('Tasks', taskSchema)
 module.exports = Tasks;
